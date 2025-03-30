@@ -1,0 +1,144 @@
+.footer-area {
+  background-color: #00213e; // Light background color for the footer
+  padding: 40px 0; // Padding for the footer
+
+  .container {
+      margin: 0 auto; // Center the container
+  }
+
+  .footer-content {
+      display: flex;
+      flex-wrap: wrap; // Allow wrapping of content
+      justify-content: space-between; // Space out the content
+
+      .about-widget {
+          flex: 1 1 30%; // Flex-grow, flex-shrink, and basis
+          margin-bottom: 20px; // Margin for spacing
+          .footer-logo {
+              max-width: 150px; // Limit logo size
+              margin-bottom: 25px; // Space below logo
+          }
+          p {
+            margin-top: 20px;
+              color: #ffffff; // Text color
+          }
+      }
+
+      .widget-tas {
+          flex: 1 1 40%; // Flex-grow, flex-shrink, and basis
+          margin-bottom: 20px; // Margin for spacing
+
+          .useful-links-title {
+              font-size: 24px; // Title font size
+              margin-bottom: 1px; // Space below title
+              margin-left: 115px;
+              text-align: center;
+              color: #ffffff;
+          }
+
+          .links-container {
+            margin-left: 50px;
+              .useful-links {
+                  list-style: none; // Remove default list style
+                  padding: 0; // Remove padding
+                  margin: 0; // Remove margin
+                  display: grid; // Use grid layout
+                  grid-template-columns: repeat(2, 1fr); // Two columns
+                  gap: px; // Space between links
+
+                  li {
+                      a {
+                          display: block; // Make the link fill the list item
+                          padding: 0px 0; // Padding for links
+                          text-align: left; // Center the text
+                          color: #ffffff; // Link color
+                          text-decoration: none; // Remove underline
+
+                          &:hover {
+                              text-decoration: underline; // Underline on hover
+                          }
+                      }
+                  }
+              }
+          }
+      }
+
+      .widget-social-icons {
+          flex: 1 1 30%; // Flex-grow, flex-shrink, and basis
+          margin-bottom: 20px; // Margin for spacing
+          margin-left: 2px;
+
+          p {
+              margin: 0; // Remove default margin
+              color: #ffffff;
+              font-size: 18px;
+              &.font-weight-bold {
+                  font-weight: bold; // Bold text
+
+              }
+          }
+
+          .follow-us-text {
+              color: #ffffff; // Text color
+              margin-bottom: 15px; // Space below text
+          }
+
+          .social-icons {
+              display: flex; // Use flexbox for social icons
+              gap: 15px; // Space between icons
+
+              // Style for each social icon
+              a {
+                  color: #ffffff; // Icon color
+                  font-size: 24px; // Icon size
+                  transition: color 0.3s; // Transition for hover effect
+
+                  &:hover {
+                      color: #ffb700; // Change color on hover
+                  }
+              }
+          }
+      }
+  }
+
+  .footer-bottom {
+      background-color: #343a40; // Dark background for the bottom
+      color: #ffffff; // White text color
+      padding: 20px 0; // Padding for the bottom
+
+      .container {
+          text-align: center; // Center text
+
+          .widget-copyright {
+              p {
+                  margin: 0; // Remove default margin
+                  font-size: 20px;
+              }
+          }
+      }
+  }
+
+  // Mobile Styles
+  @media (max-width: 768px) {
+      .footer-content {
+          flex-direction: column; // Stack content verticall
+          align-items: flex-start;
+
+
+          .about-widget,
+          .widget-tas,
+          .widget-social-icons {
+              flex: 1 1 100%; // Full width for each section
+              margin-bottom: 20px; // Space between sections
+          }
+
+          .widget-tas {
+              .useful-links {
+                text-align-last: left;
+                  grid-template-columns: 1fr; // Single column on mobil
+
+              }
+          }
+      }
+  }
+}
