@@ -61,7 +61,7 @@ const Footer = () => {
                             </span>
                         </p>
                         <p className="follow-us-text">
-                            Don't miss our future updates! Follow Us Today!
+                            Don&apos;t miss our future updates! Follow Us Today!
                         </p>
                         <div className="social-icons">
                             <SocialIcon
