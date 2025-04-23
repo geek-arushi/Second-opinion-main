@@ -28,12 +28,42 @@ const MobileMenu = ({ show, onClose }) => {
                     </button>
                 </div>
                 <div className="menu-content">
-                    <nav className="offcanvas-navigation" aria-label="Mobile Navigation">
+                    <nav
+                        className="offcanvas-navigation"
+                        aria-label="Mobile Navigation"
+                    >
                         <ul>
-                            <li><Link to="/" onClick={onClose}>Home</Link></li>
-                            <li><Link to="/about" onClick={onClose}>About Us</Link></li>
-                            <li><Link to="/services" onClick={onClose}>Services</Link></li>
-                            <li><Link to="/contact" onClick={onClose}>Contact</Link></li>
+                            <li>
+                                <Link to="/" onClick={onClose}>
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/service" onClick={onClose}>
+                                    Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/blog & News" onClick={onClose}>
+                                    Blog & News
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/howitwork" onClick={onClose}>
+                                    How it works
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/contact" onClick={onClose}>
+                                    Contact
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/faq" onClick={onClose}>
+                                    FAQ
+                                </Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>
