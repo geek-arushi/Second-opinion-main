@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Logo from "../logo";
 
 const MobileMenu = ({ show, onClose }) => {
     return (
@@ -15,30 +14,20 @@ const MobileMenu = ({ show, onClose }) => {
                 }}
                 role="button"
                 tabIndex={0}
+                aria-label="Close mobile menu"
+                title="Close"
             ></div>
+
             <div className="inner">
                 <div className="mobile-header">
-                    <button className="mobile-close-btn" onClick={onClose}>
+                    <button
+                        className="mobile-close-btn"
+                        onClick={onClose}
+                        aria-label="Close menu"
+                        title="Close"
+                    >
                         <span></span>
                     </button>
-                </div>
-                <div className="menu-content">
-                    <nav className="offcanvas-navigation">
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/about">About Us</Link>
-                            </li>
-                            <li>
-                                <Link to="/services">Services</Link>
-                            </li>
-                            <li>
-                                <Link to="/contact">Contact</Link>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>
