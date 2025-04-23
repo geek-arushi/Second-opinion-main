@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-syntax-flow": "^7.14.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@popperjs/core": "^2.11.8",
+    "@testing-library/dom": "^7.21.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
@@ -11,6 +15,7 @@
     "bootstrap": "^5.3.3",
     "disqus-react": "^1.0.11",
     "framer-motion": "^12.4.7",
+    "postcss": "^8.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-floating-whatsapp": "^5.0.8",
@@ -27,6 +32,7 @@
     "react-whatsapp-button": "^2.0.0",
     "sass": "^1.32.8",
     "swiper": "^6.8.4",
+    "typescript": "^5.8.3",
     "yarn": "^1.22.22"
   },
   "scripts": {
