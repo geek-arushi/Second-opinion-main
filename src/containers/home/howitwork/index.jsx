@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper";
+import "swiper/swiper-bundle.min.css";
 import SectionTitle from "../../../components/section-title";
 
 const Howitwork = () => {
+    const steps = [
+        { img: "/img/photos/h1.png", alt: "Step 1" },
+        { img: "/img/photos/h2.png", alt: "Step 2" },
+        { img: "/img/photos/h3.png", alt: "Step 3" },
+    ];
+
     return (
         <div className="team-area team-default-area bg-gray py-5">
             <div className="container">
@@ -14,55 +23,49 @@ const Howitwork = () => {
                             text="Quick • Simple • Impactful"
                         />
 
-                        {/* Motion div for sliding animation */}
                         <motion.div
-                            className="d-flex justify-content-center align-items-center gap-5 flex-wrap"
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                         >
-                            <motion.img
-                                src={
-                                    process.env.PUBLIC_URL +
-                                    "/img/photos/h1.png"
-                                }
-                                alt="Step 1"
-                                className="img-fluid"
-                                style={{
-                                    width: "350px",
-                                    height: "350px",
-                                    objectFit: "contain",
+                            <Swiper
+                                modules={[Navigation, Pagination, Autoplay]}
+                                spaceBetween={30}
+                                navigation
+                                pagination={{ clickable: true }}
+                                autoplay={{ delay: 3000 }}
+                                loop
+                                breakpoints={{
+                                    0: {
+                                        slidesPerView: 1,
+                                    },
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
                                 }}
-                                whileHover={{ scale: 1.1 }}
-                            />
-                            <motion.img
-                                src={
-                                    process.env.PUBLIC_URL +
-                                    "/img/photos/h2.png"
-                                }
-                                alt="Step 2"
-                                className="img-fluid"
-                                style={{
-                                    width: "350px",
-                                    height: "350px",
-                                    objectFit: "contain",
-                                }}
-                                whileHover={{ scale: 1.1 }}
-                            />
-                            <motion.img
-                                src={
-                                    process.env.PUBLIC_URL +
-                                    "/img/photos/h3.png"
-                                }
-                                alt="Step 3"
-                                className="img-fluid"
-                                style={{
-                                    width: "350px",
-                                    height: "350px",
-                                    objectFit: "contain",
-                                }}
-                                whileHover={{ scale: 1.1 }}
-                            />
+                            >
+                                {steps.map((step, index) => (
+                                    <SwiperSlide key={index}>
+                                        <motion.img
+                                            src={
+                                                process.env.PUBLIC_URL +
+                                                step.img
+                                            }
+                                            alt={step.alt}
+                                            className="img-fluid mx-auto d-block"
+                                            style={{
+                                                width: "350px",
+                                                height: "350px",
+                                                objectFit: "contain",
+                                            }}
+                                            whileHover={{ scale: 1.1 }}
+                                        />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </motion.div>
                     </div>
                 </div>
