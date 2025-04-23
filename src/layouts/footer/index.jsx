@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer-area">
             <div className="container">
                 <div className="footer-content">
-                    <div className="about-widget">
+                    <div className="about-widget text-start">
                         <Logo
                             classOption="footer-logo"
                             image={`${process.env.PUBLIC_URL}/img/logo-dark.png`}
@@ -19,10 +19,10 @@ const Footer = () => {
                             second opinions.
                         </p>
                     </div>
-                    <div className="widget-tas">
+                    <div className="widget-tas text-start">
                         <h4 className="useful-links-title">Useful Links</h4>
                         <div className="links-container">
-                            <ul className="useful-links">
+                            <ul className="useful-links text-start">
                                 <li>
                                     <Link to="/">Home</Link>
                                 </li>
@@ -54,14 +54,14 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="widget-social-icons">
+                    <div className="widget-social-icons text-start">
                         <p>
-                            <span className="font-weight-bold,color ">
+                            <span className="font-weight-bold,color">
                                 Follow Us
                             </span>
                         </p>
                         <p className="follow-us-text">
-                            Don’t miss our future updates! Follow Us Today!
+                            Don't miss our future updates! Follow Us Today!
                         </p>
                         <div className="social-icons">
                             <SocialIcon
@@ -90,9 +90,9 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <div className="container">
-                    <div className="row text-center">
+                    <div className="row">
                         <div className="col-sm-12">
-                            <div className="widget-copyright">
+                            <div className="widget-copyright text-start">
                                 <p>
                                     @ 2025{" "}
                                     <span className="text-uppercase">
