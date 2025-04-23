@@ -20,7 +20,7 @@ const HomePage = () => {
     return (
         <React.Fragment>
             <Layout>
-                <SEO title="Second Opinion – Health &amp; Medical React JS Template" />
+                <SEO title="Secop &amp; Second Opinion" />
                 <div className="wrapper home-default-wrapper">
                     <Header />
                     <div className="main-content site-wrapper-reveal">

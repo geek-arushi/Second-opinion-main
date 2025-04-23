@@ -2,7 +2,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import Team from "../../containers/home/team2";
+import Teamcan from "../../containers/home/team2/indexcan";
 import SidebarPost from "../sidebar/sidebar-post";
 const Cancers = () => {
     return (
@@ -90,7 +90,7 @@ const Cancers = () => {
                                 the best possible care to achieve the best
                                 possible outcome.
                             </p>
-                            <Team />
+                            <Teamcan />
                         </div>
                     </div>
                 </div>

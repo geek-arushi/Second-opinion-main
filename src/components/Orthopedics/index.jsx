@@ -2,7 +2,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import Team from "../../containers/home/team2";
+import Teamoth from "../../containers/home/team2/index2";
 import SidebarPost from "../sidebar/sidebar-post";
 const Orthopedicse = () => {
     return (
@@ -86,7 +86,7 @@ const Orthopedicse = () => {
                                 accurate diagnosis and the best possible
                                 treatment options.
                             </p>
-                            <Team />
+                            <Teamoth />
                         </div>
                     </div>
                 </div>

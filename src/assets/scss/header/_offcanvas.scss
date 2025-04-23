@@ -128,19 +128,40 @@
         position: relative;
         display: block;
         line-height: 28px;
+        padding: 0;
+        margin: 0;
 
         a {
           display: block;
           position: relative;
-          padding: 8px 20px;
+          padding: 12px 20px;
           text-transform: capitalize;
           border-top: 1px solid $border-color2;
-          font-size: 14px;
-          line-height: 30px;
+          font-size: 16px;
+          line-height: 24px;
           color: $color-dark;
+          font-weight: 500;
 
           &:hover {
             color: #6d0101;
+            background-color: rgba(109, 1, 1, 0.05);
+          }
+        }
+
+        .sub-menu {
+          display: none;
+          padding-left: 15px;
+          
+          li a {
+            padding: 8px 20px;
+            font-size: 14px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+          }
+        }
+
+        &.active {
+          > .sub-menu {
+            display: block;
           }
         }
 
@@ -209,25 +230,6 @@
             transform: rotate(0) scale(0.75);
           }
         }
-      }
-    }
-  }
-
-  .offcanvas-social {
-    li {
-      display: inline-block;
-      margin: 0 10px 10px 0;
-
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 16px;
-        line-height: 40px;
-        width: 40px;
-        height: 40px;
-        border: 2px solid transparent;
-        border-radius: 50%;
       }
     }
   }

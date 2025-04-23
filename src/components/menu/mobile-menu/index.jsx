@@ -4,6 +4,7 @@ import { getClosest, getSiblings, slideToggle, slideUp } from "../../../utils";
 
 const MobileMenu = ({ show, onClose }) => {
     const onClickHandler = (e) => {
+        e.preventDefault(); // Prevent default behavior
         const target = e.currentTarget;
         const parentEl = target.parentElement;
         if (
@@ -19,19 +20,19 @@ const MobileMenu = ({ show, onClose }) => {
             const childNodes = parent.childNodes;
             const parentSiblings = getSiblings(parent);
 
+            // Close other open menus
             parentSiblings.forEach((sibling) => {
-                sibling.childNodes.forEach((child) => {
-                    if (child.nodeName === "UL") {
-                        slideUp(child, 1000);
-                    }
-                });
-            });
-
-            childNodes.forEach((child) => {
-                if (child.nodeName === "UL") {
-                    slideToggle(child, 1000);
+                const submenu = sibling.querySelector("ul");
+                if (submenu) {
+                    slideUp(submenu, 300);
                 }
             });
+
+            // Toggle current menu
+            const submenu = parent.querySelector("ul");
+            if (submenu) {
+                slideToggle(submenu, 300);
+            }
         }
     };
 
@@ -50,9 +51,7 @@ const MobileMenu = ({ show, onClose }) => {
                 <nav className="offcanvas-menu">
                     <ul>
                         <li>
-                            <NavLink to="/">
-                                <span className="menu-text">Home</span>
-                            </NavLink>
+                            <NavLink to="/">Home</NavLink>
                             <span
                                 className="menu-expand"
                                 role="button"
@@ -63,7 +62,9 @@ const MobileMenu = ({ show, onClose }) => {
                                         onClickHandler(e);
                                     }
                                 }}
-                            ></span>
+                            >
+                                <i className="icon"></i>
+                            </span>
                             <ul className="offcanvas-submenu">
                                 <li>
                                     <NavLink to="/">Home</NavLink>
@@ -71,9 +72,7 @@ const MobileMenu = ({ show, onClose }) => {
                             </ul>
                         </li>
                         <li>
-                            <NavLink to="/service">
-                                <span className="menu-text">Services</span>
-                            </NavLink>
+                            <NavLink to="/service">Services</NavLink>
                             <span
                                 className="menu-expand"
                                 role="button"
@@ -84,7 +83,9 @@ const MobileMenu = ({ show, onClose }) => {
                                         onClickHandler(e);
                                     }
                                 }}
-                            ></span>
+                            >
+                                <i className="icon"></i>
+                            </span>
                             <ul className="offcanvas-submenu">
                                 <li>
                                     <NavLink to="/cancer">Cancer</NavLink>

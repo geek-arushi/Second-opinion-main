@@ -27,7 +27,7 @@ const CallToAction = () => {
                                 </p>
                             </div>
                             <a
-                                href="https://secopp.jotform.com/app/242645877128972"
+                                href="https://app.secopp.com/login/"
                                 className="btn btn-theme btn-white custom-btn"
                                 target="_blank"
                                 rel="noopener noreferrer"

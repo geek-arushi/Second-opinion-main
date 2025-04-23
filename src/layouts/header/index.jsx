@@ -1,7 +1,7 @@
+import { Fragment, useEffect, useState } from "react";
 import Button from "../../components/button";
 import Logo from "../../components/logo";
 import MainMenu from "../../components/menu/main-menu";
-import { Fragment, useEffect, useState } from "react";
 import MobileMenu from "../../components/menu/mobile-menu";
 import MenuOverlay from "../../components/menu/menu-overlay";
 
@@ -31,19 +31,21 @@ const Header = () => {
     }, []);
 
     return (
-        <Fragment>
+        <>
             <header className="header">
                 <div className="header-middle mobile-sticky">
                     <div className="container">
-                        <div className="col-6">
-                            <div className="header-middle-content">
+                        <div className="row align-items-center">
+                            <div className="col-6">
                                 <div className="header-logo">
                                     <Logo
                                         image={`${process.env.PUBLIC_URL}/img/logo.png`}
                                     />
                                 </div>
+                            </div>
+                            <div className="col-6 d-flex justify-content-end">
                                 <Button
-                                    path="https://secopp.jotform.com/app/242645877128972"
+                                    path="https://app.secopp.com/login/"
                                     classOption="book-now-btn d-none d-sm-inline-block d-lg-none"
                                     text="LogIn / SignUp"
                                 />
@@ -51,21 +53,27 @@ const Header = () => {
                                     <button
                                         onClick={onCanvasHandler}
                                         className="offcanvas-toggle"
+                                        aria-label="Toggle Mobile Menu"
+                                        aria-expanded={ofcanvasShow}
+                                        type="button"
                                     >
-                                        <svg viewBox="0 0 800 600">
+                                        <svg
+                                            viewBox="0 0 800 600"
+                                            aria-hidden="true"
+                                        >
                                             <path
                                                 d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"
                                                 id="top"
-                                            ></path>
+                                            />
                                             <path
                                                 d="M300,320 L540,320"
                                                 id="middle"
-                                            ></path>
+                                            />
                                             <path
                                                 d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
                                                 id="bottom"
                                                 transform="translate(480, 320) scale(1, -1) translate(-480, -318)"
-                                            ></path>
+                                            />
                                         </svg>
                                     </button>
                                 </div>
@@ -73,6 +81,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="header-bottom d-none d-lg-block">
                     <div className="container">
                         <div className="row">
@@ -80,7 +89,7 @@ const Header = () => {
                                 <div className="d-flex flex-wrap align-items-center justify-content-between">
                                     <MainMenu classOption="small-menu" />
                                     <Button
-                                        path="https://secopp.jotform.com/app/242645877128972"
+                                        path="https://app.secopp.com/login/"
                                         classOption="book-now-btn"
                                         text="LogIn / SignUp"
                                     />
@@ -106,7 +115,7 @@ const Header = () => {
                                     </div>
                                     <MainMenu classOption="small-menu" />
                                     <Button
-                                        path="https://secopp.jotform.com/app/242645877128972"
+                                        path="https://app.secopp.com/login/"
                                         classOption="book-now-btn"
                                         text="LogIn / SignUp"
                                     />
@@ -116,9 +125,14 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <MenuOverlay show={ofcanvasShow} />
-            <MobileMenu show={ofcanvasShow} onClose={onCanvasHandler} />
-        </Fragment>
+
+            {ofcanvasShow && (
+                <>
+                    <MenuOverlay show={ofcanvasShow} />
+                    <MobileMenu show={ofcanvasShow} onClose={onCanvasHandler} />
+                </>
+            )}
+        </>
     );
 };
 

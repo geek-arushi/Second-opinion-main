@@ -6,7 +6,7 @@ import Accordion, {
     AccordionContent,
 } from "../accordion";
 
-const AccordionWrapm = () => {
+const AccordionWrap = () => {
     return (
         <div
             className="accordion-container"
@@ -88,7 +88,7 @@ const AccordionWrapm = () => {
                         your questions. Conflicting Diagnosis: Second Opinion
                         can help you figure out the correct diagnosis if you
                         have received different medical opinions. Peace of Mind:
-                        Worrying about your health shouldn't keep you up at
+                        Worrying about your health shouldn’t keep you up at
                         night. Having an expert give you a second opinion can
                         put your mind at ease. Clarity about Persistent
                         Symptoms: Your doctor said everything is fine, but
@@ -106,13 +106,14 @@ const AccordionWrapm = () => {
                 </AccordionItem>
                 <AccordionItem id="three">
                     <AccordionTitle id="three">
+                        {" "}
                         How are my appointments scheduled?
                     </AccordionTitle>
                     <AccordionContent id="three">
                         Our US-based physicians are available at your
                         fingertips. Our platform allows you to choose the
                         appointment time that works best for you. With Second
-                        Opinion, you're able to meet virtually with an expert
+                        Opinion, you’re able to meet virtually with an expert
                         and/or get a written report about your medical condition
                         and possible treatment options.
                     </AccordionContent>
@@ -129,9 +130,100 @@ const AccordionWrapm = () => {
                         case.
                     </AccordionContent>
                 </AccordionItem>
+                <AccordionItem id="five">
+                    <AccordionTitle id="five">
+                        How long does it take to get an appointment?
+                    </AccordionTitle>
+                    <AccordionContent id="five">
+                        You can book an appointment today, select your times,
+                        and our dedicated care coordinators will work with you
+                        and your physician to set up an appointment as soon as
+                        possible. We have experts in every orthopedic and
+                        oncological specialty with different availability to
+                        suit your needs.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem id="six">
+                    <AccordionTitle id="six">
+                        Can I connect with SecondOpinion if l am not in the
+                        United States?
+                    </AccordionTitle>
+                    <AccordionContent id="six">
+                        Absolutely. Second Opinion is designed for global use to
+                        connect patients all across the world with leading US
+                        physicians. Thus, wherever you are located will not be a
+                        concern to scheduling your Second Opinion appointment
+                        today.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem id="seven">
+                    <AccordionTitle id="seven">
+                        How much does an appointment cost?
+                    </AccordionTitle>
+                    <AccordionContent id="seven">
+                        Video and Written Consult = 34600 INR Written Consult
+                        Only = 25900 INR
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem id="Eighth">
+                    <AccordionTitle id="Eighth">
+                        Are all consultations conducted in English?
+                    </AccordionTitle>
+                    <AccordionContent id="Eighth">
+                        Not necessarily. The majority of our physicians are
+                        multilingual, speaking English, Hindi, Telugu, Gujarati,
+                        and Marathi. We are currently working on matching your
+                        most comfortable language to a physician who also speaks
+                        that language, but our care coordinator will ensure your
+                        communication and experience is flawless.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem id="nine">
+                    <AccordionTitle id="nine">
+                        How do I obtain my medical records to upload?
+                    </AccordionTitle>
+                    <AccordionContent id="nine">
+                        We ask you to request your own images and records from
+                        your current provider. Often, these documents are
+                        delivered on a disk; however, they may also provide them
+                        via secure email. Alternatively, you can contact our
+                        care coordinators via WhatsApp for assistance in
+                        obtaining your medical records and uploading them to the
+                        platform. We strongly suggest that you request your
+                        medical records prior to scheduling your Second Opinion
+                        appointment.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem id="ten">
+                    <AccordionTitle id="ten">
+                        How do I upload my medical records onto the
+                        SecondOpinion Portal?
+                    </AccordionTitle>
+                    <AccordionContent id="ten">
+                        All uploads are completed via our secure platform and
+                        login. Our platform offers step-by-step instructions to
+                        completing your medical history and uploading all the
+                        necessary documents. Our dedicated care coordinators can
+                        assist you through the process upon request including
+                        filling out forms and uploading medical records/images.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem id="eleven">
+                    <AccordionTitle id="eleven">
+                        How will I know if my records uploaded successfully?
+                    </AccordionTitle>
+                    <AccordionContent id="eleven">
+                        Our care coordinators will be in constant contact with
+                        you and can assist you throughout the process from
+                        registering to booking your appointment and receiving
+                        your consult. Alternatively, your account will send you
+                        periodic updates altering you to the status of your
+                        consult.
+                    </AccordionContent>
+                </AccordionItem>
             </Accordion>
         </div>
     );
 };
 
-export default AccordionWrapm;
+export default AccordionWrap;

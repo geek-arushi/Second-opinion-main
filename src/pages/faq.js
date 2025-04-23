@@ -7,7 +7,7 @@ import SEO from "../components/seo/index.jsx";
 import PageTitleContainer from "../containers/global/page-title/index.jsx";
 import CallToAction from "../containers/global/call-to-action/index.jsx";
 import SearchBar from "../containers/faqsearch/index.jsx";
-import AccordionWrap from "../components/accordion/AccordionWrap.jsx";
+import AccordionWrap from "../components/accordion/AccordionWrap copy.jsx";
 const faq = () => {
     return (
         <React.Fragment>

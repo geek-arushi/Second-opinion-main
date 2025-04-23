@@ -19,7 +19,7 @@ const cancer = () => {
                         <PageTitleContainer
                             image="img/slider/12.jpg"
                             subTitle="Knoow More"
-                            title="Oncology <span></span>"
+                            title="Cancer <span></span>"
                         />
                         <Cancers />
                         <Whychooseus />
