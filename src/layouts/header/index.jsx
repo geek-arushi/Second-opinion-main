@@ -121,12 +121,7 @@ const Header = () => {
             </header>
 
             {offcanvasShow && (
-                <>
-                    <MenuOverlay 
-                        show={offcanvasShow} 
-                        onClose={closeMobileMenu} 
-                    />
-                </>
+                <MenuOverlay show={offcanvasShow} onClose={closeMobileMenu} />
             )}
         </>
     );
