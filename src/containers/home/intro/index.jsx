@@ -8,11 +8,11 @@ SwiperCore.use([Navigation]);
 const IntroContainer = () => {
     const swiperOption = {
         loop: true,
-        speed: 300,
+        speed: 1500,
         spaceBetween: 0,
         slidesPerView: 1,
         autoplay: {
-            delay: 1500,
+            delay: 5000,
             disableOnInteraction: false,
         },
         navigation: {
