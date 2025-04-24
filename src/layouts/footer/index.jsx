@@ -1,108 +1,81 @@
-import SocialIcon from "../../components/social-icon";
 import { Link } from "react-router-dom";
+import SocialIcon from "../../components/social-icon";
 import Logo from "../../components/logo";
 
 const Footer = () => {
     return (
-        <footer className="footer-area">
-            <div className="container">
-                <div className="footer-content">
-                    <div className="about-widget text-start">
-                        <Logo
-                            classOption="footer-logo"
-                            image={`${process.env.PUBLIC_URL}/img/logo-dark.png`}
+        <footer className="custom-footer">
+            <div className="footer-top">
+                <div className="footer-section logo-section">
+                    <Logo
+                        classOption="footer-logo"
+                        image={`${process.env.PUBLIC_URL}/img/logo-dark.png`}
+                    />
+                    <p>
+                        SECOPP connects patients in India with a trusted network
+                        of top US medical professionals for second opinions.
+                    </p>
+                </div>
+                <div className="footer-section links-section">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/service">Services</Link>
+                        </li>
+                        <li>
+                            <Link to="/blog">Blog & News</Link>
+                        </li>
+                        <li>
+                            <Link to="/howitwork">How it Works</Link>
+                        </li>
+                        <li>
+                            <Link to="/contact">Contact</Link>
+                        </li>
+                        <li>
+                            <Link to="/faq">FAQ</Link>
+                        </li>
+                        <li>
+                            <Link to="/privacypolicy">Privacy Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/terms">Terms & Conditions</Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className="footer-section social-section">
+                    <h4>Follow Us</h4>
+                    <p>Stay connected with our latest updates!</p>
+                    <div className="social-icons">
+                        <SocialIcon
+                            path="https://facebook.com"
+                            icon="icofont-facebook"
                         />
-                        <p className="mb-0">
-                            SECOPP connects patients in India with a trusted
-                            network of top US medical professionals (cancer
-                            specialists & orthopaedic surgeons) for valuable
-                            second opinions.
-                        </p>
-                    </div>
-                    <div className="widget-tas text-start">
-                        <h4 className="useful-links-title">Useful Links</h4>
-                        <div className="links-container">
-                            <ul className="useful-links text-start">
-                                <li>
-                                    <Link to="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link to="service/">Services</Link>
-                                </li>
-                                <li>
-                                    <Link to="/blog & News">Blog & News</Link>
-                                </li>
-                                <li>
-                                    <Link to="/howitwork">How it works</Link>
-                                </li>
-                                <li>
-                                    <Link to="/contact">Contact</Link>
-                                </li>
-                                <li>
-                                    <Link to="/faq">FAQ</Link>
-                                </li>
-                                <li>
-                                    <Link to="/privacypolicy">
-                                        Privacy Policy
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/terms&conditions">
-                                        Terms & Conditions
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="widget-social-icons text-start">
-                        <p>
-                            <span className="font-weight-bold,color">
-                                Follow Us
-                            </span>
-                        </p>
-                        <p className="follow-us-text">
-                            Don&apos;t miss our future updates! Follow Us Today!
-                        </p>
-                        <div className="social-icons">
-                            <SocialIcon
-                                path="https://www.facebook.com/profile.php?id=61573080015519"
-                                icon="icofont-facebook"
-                            />
-                            <SocialIcon
-                                path="https://www.instagram.com/secopp_com"
-                                icon="icofont-instagram"
-                            />
-                            <SocialIcon
-                                path="https://x.com/SecOpp_Com"
-                                icon="icofont-twitter"
-                            />
-                            <SocialIcon
-                                path="https://www.linkedin.com/company/104032006/admin/dashboard/"
-                                icon="icofont-linkedin"
-                            />
-                            <SocialIcon
-                                path="https://www.youtube.com/@SecOppOfficial"
-                                icon="icofont-youtube"
-                            />
-                        </div>
+                        <SocialIcon
+                            path="https://instagram.com"
+                            icon="icofont-instagram"
+                        />
+                        <SocialIcon
+                            path="https://twitter.com"
+                            icon="icofont-twitter"
+                        />
+                        <SocialIcon
+                            path="https://linkedin.com"
+                            icon="icofont-linkedin"
+                        />
+                        <SocialIcon
+                            path="https://youtube.com"
+                            icon="icofont-youtube"
+                        />
                     </div>
                 </div>
             </div>
             <div className="footer-bottom">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12">
-                            <div className="widget-copyright text-start">
-                                <p>
-                                    @ 2025{" "}
-                                    <span className="text-uppercase">
-                                        Secopp
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p>
+                    &copy; 2025 <span>Secopp</span>. All Rights Reserved.
+                </p>
             </div>
         </footer>
     );
