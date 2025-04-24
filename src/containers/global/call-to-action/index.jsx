@@ -2,6 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CallToAction = () => {
+    const handleSignUpClick = () => {
+        window.open(
+            "https://app.secopp.com/login/",
+            "_blank",
+            "noopener,noreferrer"
+        );
+    };
+
     return (
         <div
             className="divider-area bgcolor-theme bg-img"
@@ -26,14 +34,12 @@ const CallToAction = () => {
                                     best medical opinions for your condition.
                                 </p>
                             </div>
-                            <a
-                                href="https://app.secopp.com/login/"
+                            <button
                                 className="btn btn-theme btn-white custom-btn"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                onClick={handleSignUpClick}
                             >
                                 Sign Up Today
-                            </a>
+                            </button>
                             <Link
                                 to="contact/"
                                 className="btn btn-theme btn-white custom-btn"
