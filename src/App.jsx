@@ -110,7 +110,7 @@ const App = () => {
                         component={Blogdetail2}
                     />
                     <Route
-                        path={`${process.env.PUBLIC_URL + "/privacypolicy"}`}
+                        path={`${process.env.PUBLIC_URL + "/privacy-policy"}`}
                         component={Privacypolicy}
                     />
                     <Route
