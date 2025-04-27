@@ -7,7 +7,7 @@ const PrivacyPolicyq = () => {
         <div className="container my-4">
             <div className="p-4 bg-light shadow rounded">
                 <h1 className="h2 fw-bold mb-4" style={{ color: "#00213e" }}>
-                    Second Opinion USA LLC (SecOpp) PRIVACY POLICY
+                    Second Opinion USA LLC (SecOpp) PRIVACY-POLICY
                 </h1>
                 <p className="mb-2">Version: 1.0</p>
                 <p className="mb-2">Effective Date: February 1, 2025</p>
