@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
-import "swiper/swiper-bundle.min.css";
 import SectionTitle from "../../../components/section-title";
 
 const Howitwork = () => {
@@ -31,8 +30,6 @@ const Howitwork = () => {
                             <Swiper
                                 modules={[Navigation, Pagination, Autoplay]}
                                 spaceBetween={30}
-                                navigation
-                                pagination={{ clickable: true }}
                                 autoplay={{ delay: 3000 }}
                                 loop
                                 breakpoints={{

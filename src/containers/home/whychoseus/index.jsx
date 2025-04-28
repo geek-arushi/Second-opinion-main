@@ -30,8 +30,6 @@ const Whychooseus = () => {
                             <Swiper
                                 modules={[Navigation, Pagination, Autoplay]}
                                 spaceBetween={30}
-                                navigation
-                                pagination={{ clickable: true }}
                                 autoplay={{ delay: 3000 }}
                                 loop
                                 breakpoints={{
