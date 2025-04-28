@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CallToAction = () => {
@@ -10,12 +10,108 @@ const CallToAction = () => {
         );
     };
 
+    // CSS styles defined within the component
+    const styles = {
+        dividerArea: {
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/shape/01.jpg)`,
+            padding: "50px 0",
+        },
+        contentArea: {
+            padding: "50px 30px",
+            textAlign: "left",
+        },
+        contentInner: {
+            marginBottom: "30px",
+        },
+        heading: {
+            fontSize: "45px",
+            marginBottom: "15px",
+            textAlign: "left",
+        },
+        headingSpan: {
+            fontWeight: "bold",
+        },
+        paragraph: {
+            fontSize: "18px",
+            margin: "0",
+            textAlign: "left",
+        },
+        buttonContainer: {
+            display: "flex", // This ensures buttons are side by side
+            flexDirection: "row", // Explicitly set to row for desktop
+            justifyContent: "flex-start",
+            gap: "20px",
+            flexWrap: "nowrap", // Prevent wrapping on desktop
+            "@media (max-width: 576px)": {
+                flexDirection: "column", // Stack vertically only on mobile
+                alignItems: "flex-start",
+            },
+        },
+        button: {
+            padding: "4px 30px",
+            fontSize: "14px",
+            fontWeight: "800",
+            borderRadius: "5px",
+            transition: "all 0.3s ease",
+            margin: "5px",
+            cursor: "pointer",
+            minWidth: "180px",
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            "@media (max-width: 576px)": {
+                padding: "12px 25px",
+                fontSize: "14px",
+                width: "100%",
+                maxWidth: "200px",
+            },
+        },
+    };
+
+    // Custom hover styles using useState
+    const [signUpHovered, setSignUpHovered] = useState(false);
+    const [contactHovered, setContactHovered] = useState(false);
+
+    const buttonHoverStyle = {
+        backgroundColor: "#ff8c00",
+        color: "white",
+        transform: "translateY(-3px)",
+        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
+    };
+
+    // Apply inline media queries for responsive design
+    const mediaStyles = {
+        "@media (min-width: 577px)": {
+            buttonContainer: {
+                flexDirection: "row",
+                flexWrap: "nowrap",
+            },
+        },
+        "@media (max-width: 576px)": {
+            heading: {
+                fontSize: "24px",
+            },
+            paragraph: {
+                fontSize: "14px",
+            },
+            buttonContainer: {
+                flexDirection: "column",
+                flexWrap: "flex-start",
+            },
+            button: {
+                padding: "12px 25px",
+                fontSize: "14px",
+                width: "100%",
+                maxWidth: "200px",
+            },
+        },
+    };
+
     return (
         <div
             className="divider-area bgcolor-theme bg-img"
-            style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/img/shape/01.jpg)`,
-            }}
+            style={styles.dividerArea}
         >
             <div className="container">
                 <div className="row content-align-center">
@@ -24,28 +120,67 @@ const CallToAction = () => {
                             className="divider-content-area divider-content-style1"
                             data-aos="fade-up"
                             data-aos-duration="1200"
+                            style={styles.contentArea}
                         >
-                            <div className="content-inner">
-                                <h2>
-                                    Ready to <span>Get Started?</span>
+                            <div
+                                className="content-inner"
+                                style={styles.contentInner}
+                            >
+                                <h2 style={styles.heading}>
+                                    Ready to{" "}
+                                    <span style={styles.headingSpan}>
+                                        Get Started?
+                                    </span>
                                 </h2>
-                                <p>
+                                <p style={styles.paragraph}>
                                     Connect with US experts now and receive the
                                     best medical opinions for your condition.
                                 </p>
                             </div>
-                            <button
-                                className="btn btn-theme btn-white custom-btn"
-                                onClick={handleSignUpClick}
+                            <div
+                                style={{
+                                    ...styles.buttonContainer,
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    justifyContent: "flex-start",
+                                    gap: "20px",
+                                    flexWrap: "nowrap",
+                                    "@media (max-width: 576px)": {
+                                        flexDirection: "column",
+                                    },
+                                }}
                             >
-                                Sign Up Today
-                            </button>
-                            <Link
-                                to="contact/"
-                                className="btn btn-theme btn-white custom-btn"
-                            >
-                                Contact Us
-                            </Link>
+                                <button
+                                    className="btn btn-theme btn-white custom-btn"
+                                    onClick={handleSignUpClick}
+                                    style={{
+                                        ...styles.button,
+                                        ...(signUpHovered
+                                            ? buttonHoverStyle
+                                            : {}),
+                                    }}
+                                    onMouseEnter={() => setSignUpHovered(true)}
+                                    onMouseLeave={() => setSignUpHovered(false)}
+                                >
+                                    Sign Up Today
+                                </button>
+                                <Link
+                                    to="contact/"
+                                    className="btn btn-theme btn-white custom-btn"
+                                    style={{
+                                        ...styles.button,
+                                        ...(contactHovered
+                                            ? buttonHoverStyle
+                                            : {}),
+                                    }}
+                                    onMouseEnter={() => setContactHovered(true)}
+                                    onMouseLeave={() =>
+                                        setContactHovered(false)
+                                    }
+                                >
+                                    Contact Us
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
