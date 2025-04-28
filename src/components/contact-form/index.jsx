@@ -2,14 +2,34 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
-    const { register, errors } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         mode: "onBlur",
     });
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch(
+                "https://script.google.com/macros/s/AKfycbxu13P162301hNeH0Ozdy-pS2WneF2maCwv9MoRqH9NLOUxxo-7qCplNaZjVQT4CbQk0Q/exec", // <-- your deployed Apps Script Web App URL here
+                {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams(data).toString(),
+                }
+            );
+            alert("Your message was successfully sent!");
+        } catch (error) {
+            console.error("Error:", error);
+            alert("There was a problem sending your message.");
+        }
+    };
+
     return (
         <form
             className="contact-form-wrapper"
-            action="https://getform.io/f/a17a2715-d7ee-4ac4-8fcb-12f1eed43b2c"
-            method="POST"
+            onSubmit={handleSubmit(onSubmit)}
             data-aos="fade-up"
             data-aos-duration="1200"
         >
@@ -19,58 +39,85 @@ const ContactForm = () => {
                         <input
                             className="form-control"
                             type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            ref={register({ required: "Name is required" })}
+                            name="FirstName"
+                            placeholder="First Name"
+                            {...register("FirstName", { required: "First Name is required" })}
                         />
-                        {errors.name && <p>{errors.name.message}</p>}
+                        {errors.FirstName && <p>{errors.FirstName.message}</p>}
                     </div>
                 </div>
-                <div className="col-md-4">
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="email"
-                            name="email"
-                            placeholder="Email Address"
-                            ref={register({
-                                required: "Email is required",
-                                pattern: {
-                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                    message: "invalid email address",
-                                },
-                            })}
-                        />
-                        {errors.email && <p>{errors.email.message}</p>}
-                    </div>
-                </div>
+
                 <div className="col-md-4">
                     <div className="form-group">
                         <input
                             className="form-control"
                             type="text"
-                            name="subject"
-                            placeholder="Subject (optional)"
-                            ref={register({
-                                required: "Subject is required",
-                            })}
+                            name="Lastname"
+                            placeholder="Last Name"
+                            {...register("Lastname", { required: "Last Name is required" })}
                         />
-                        {errors.subject && <p>{errors.subject.message}</p>}
+                        {errors.Lastname && <p>{errors.Lastname.message}</p>}
                     </div>
                 </div>
+
+                <div className="col-md-4">
+                    <div className="form-group">
+                        <input
+                            className="form-control"
+                            type="email"
+                            name="Email"
+                            placeholder="Email Address"
+                            {...register("Email", {
+                                required: "Email is required",
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                    message: "Invalid email address",
+                                },
+                            })}
+                        />
+                        {errors.Email && <p>{errors.Email.message}</p>}
+                    </div>
+                </div>
+
+                <div className="col-md-4">
+                    <div className="form-group">
+                        <input
+                            className="form-control"
+                            type="text"
+                            name="Phone"
+                            placeholder="Phone Number"
+                            {...register("Phone", { required: "Phone is required" })}
+                        />
+                        {errors.Phone && <p>{errors.Phone.message}</p>}
+                    </div>
+                </div>
+
+                <div className="col-md-4">
+                    <div className="form-group">
+                        <input
+                            className="form-control"
+                            type="text"
+                            name="Subject"
+                            placeholder="Subject"
+                            {...register("Subject", { required: "Subject is required" })}
+                        />
+                        {errors.Subject && <p>{errors.Subject.message}</p>}
+                    </div>
+                </div>
+
                 <div className="col-md-12">
                     <div className="form-group mb-0">
                         <textarea
-                            name="message"
+                            className="form-control"
+                            name="Helpyou"
                             rows="5"
-                            placeholder="Write your message here"
-                            ref={register({
-                                required: "Message is required",
-                            })}
+                            placeholder="How can we help you?"
+                            {...register("Helpyou", { required: "Message is required" })}
                         ></textarea>
-                        {errors.message && <p>{errors.message.message}</p>}
+                        {errors.Helpyou && <p>{errors.Helpyou.message}</p>}
                     </div>
                 </div>
+
                 <div className="col-md-12 text-center">
                     <div className="form-group mb-0">
                         <button
