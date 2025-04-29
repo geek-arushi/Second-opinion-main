@@ -37,15 +37,11 @@ const CallToAction = () => {
             textAlign: "left",
         },
         buttonContainer: {
-            display: "flex", // This ensures buttons are side by side
-            flexDirection: "row", // Explicitly set to row for desktop
+            display: "flex",
+            flexDirection: "row",
             justifyContent: "flex-start",
             gap: "20px",
-            flexWrap: "nowrap", // Prevent wrapping on desktop
-            "@media (max-width: 576px)": {
-                flexDirection: "column", // Stack vertically only on mobile
-                alignItems: "flex-start",
-            },
+            flexWrap: "nowrap",
         },
         button: {
             padding: "4px 30px",
@@ -60,12 +56,6 @@ const CallToAction = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            "@media (max-width: 576px)": {
-                padding: "12px 25px",
-                fontSize: "14px",
-                width: "100%",
-                maxWidth: "200px",
-            },
         },
     };
 
@@ -80,33 +70,30 @@ const CallToAction = () => {
         boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
     };
 
-    // Apply inline media queries for responsive design
-    const mediaStyles = {
-        "@media (min-width: 577px)": {
-            buttonContainer: {
-                flexDirection: "row",
-                flexWrap: "nowrap",
-            },
-        },
-        "@media (max-width: 576px)": {
-            heading: {
-                fontSize: "24px",
-            },
-            paragraph: {
-                fontSize: "14px",
-            },
-            buttonContainer: {
-                flexDirection: "column",
-                flexWrap: "flex-start",
-            },
-            button: {
-                padding: "12px 25px",
-                fontSize: "14px",
-                width: "100%",
-                maxWidth: "200px",
-            },
-        },
-    };
+    // Mobile styles
+    const mobileStyles =
+        window.innerWidth <= 576
+            ? {
+                  buttonContainer: {
+                      flexDirection: "column",
+                      alignItems: "center",
+                      width: "100%",
+                  },
+                  button: {
+                      padding: "12px 25px",
+                      fontSize: "14px",
+                      width: "100%",
+                      maxWidth: "200px",
+                      margin: "5px auto",
+                  },
+                  heading: {
+                      fontSize: "24px",
+                  },
+                  paragraph: {
+                      fontSize: "14px",
+                  },
+              }
+            : {};
 
     return (
         <div
@@ -126,13 +113,23 @@ const CallToAction = () => {
                                 className="content-inner"
                                 style={styles.contentInner}
                             >
-                                <h2 style={styles.heading}>
+                                <h2
+                                    style={{
+                                        ...styles.heading,
+                                        ...mobileStyles.heading,
+                                    }}
+                                >
                                     Ready to{" "}
                                     <span style={styles.headingSpan}>
                                         Get Started?
                                     </span>
                                 </h2>
-                                <p style={styles.paragraph}>
+                                <p
+                                    style={{
+                                        ...styles.paragraph,
+                                        ...mobileStyles.paragraph,
+                                    }}
+                                >
                                     Connect with US experts now and receive the
                                     best medical opinions for your condition.
                                 </p>
@@ -140,14 +137,7 @@ const CallToAction = () => {
                             <div
                                 style={{
                                     ...styles.buttonContainer,
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    justifyContent: "flex-start",
-                                    gap: "20px",
-                                    flexWrap: "nowrap",
-                                    "@media (max-width: 576px)": {
-                                        flexDirection: "column",
-                                    },
+                                    ...mobileStyles.buttonContainer,
                                 }}
                             >
                                 <button
@@ -155,6 +145,7 @@ const CallToAction = () => {
                                     onClick={handleSignUpClick}
                                     style={{
                                         ...styles.button,
+                                        ...mobileStyles.button,
                                         ...(signUpHovered
                                             ? buttonHoverStyle
                                             : {}),
@@ -169,6 +160,7 @@ const CallToAction = () => {
                                     className="btn btn-theme btn-white custom-btn"
                                     style={{
                                         ...styles.button,
+                                        ...mobileStyles.button,
                                         ...(contactHovered
                                             ? buttonHoverStyle
                                             : {}),
